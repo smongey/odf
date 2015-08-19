@@ -1,23 +1,17 @@
 // bower:scss
 // endbower
 
-* {
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-font-smoothing: antialiased;
-}
+* { box-sizing: border-box; -webkit-box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
 
+// Variables
 $slate: #231f20;
 
-body {
-  font-family: 'Oslo Design Fair Beta 0.5', Helvetica, Arial, sans-serif;
-}
 
-li {
-  list-style-type: none;
-}
+// General
+body { font-family: 'Oslo Design Fair Beta 0.5', Helvetica, Arial, sans-serif; }
+li { list-style-type: none; }
+a { text-decoration: none; }
+.wrap { width: 100%; overflow: auto; }
 
 section {
   display: block;
@@ -26,11 +20,6 @@ section {
 }
 
 section div, footer div { float: left; }
-
-.wrap {
-  width: 100%;
-  overflow: auto;
-}
 
 .grid {
   display: block;
@@ -55,13 +44,49 @@ section div, footer div { float: left; }
   } 
 }
 
-.menu {
+.cookiemonster {
   position: fixed;
-  background: tomato;
-  right: 0px;
-  top: 0px;
-  padding: 2%;
+  display: block;
+  width: 100%;
+  height: 70px;
+  bottom: 0px;
+  left: 0px;
+  background: $slate;
+  color: white;
+  padding: 25px 30px;
+  transition: all ease .15s;
+  cursor: pointer;
+  .close {
+    position: absolute;
+    right: 30px;
+    top: 25px;
+    color: white;
+    transition: all ease .15s;
+  }
+  &:hover {
+    height: 80px;
+    padding: 30px;
+    .close {
+      top: 30px;
+    }
+  }
+  &.hide {
+    bottom: -80px;
+  }
 }
+
+header {
+  position: fixed;
+  width: 100%;
+  .menu {
+    position: absolute;
+    background: tomato;
+    right: 0px;
+    top: 0px;
+    padding: 2%;
+  }
+}
+// Grid
 
 .fluid {
   width: 100%;
@@ -76,7 +101,10 @@ section div, footer div { float: left; }
 .half {
   width: calc(50% - 30px);
   margin-right: 60px;
-  background: rgba(255,0,0,.1);
+  //background: rgba(255,0,0,.1);
+  .full {
+    padding: 0;
+  }
   &:nth-child(2n) {
     margin-right: 0;
   }
@@ -85,16 +113,30 @@ section div, footer div { float: left; }
 .third {
   width: calc(100% / 3 - 40px);
   margin-right: 60px;
-  background: rgba(255,255,0,.1);
+  //background: rgba(255,255,0,.1);
   &:nth-child(3n) {
     margin-right: 0;
   }
 }
 
+.flush {
+  margin: 0;
+}
+
 .full, .fluid, .half, .third {
   img {
+    display: inline-block;
+    line-height: 0;
     max-width: 100%;
   }
+}
+
+// Section specific code
+
+.intro {
+  height: 100vh;
+  background: #f2f2f2 url('http://placehold.it/1600x900') center center no-repeat;
+  background-size: cover;
 }
 
 .areas, .contact {
