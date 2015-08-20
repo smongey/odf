@@ -359,7 +359,8 @@ header {
 .full, .fluid, .half, .third {
   img {
     display: inline-block;
-    max-width: 100%;
+    // max-width: 100%;
+    width: 100%;
   }
 }
 
@@ -391,7 +392,7 @@ header {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -45%);
     text-align: center;
     color: white;
     padding: 10% 16%;
@@ -412,7 +413,7 @@ header {
     opacity: 1;
     overflow: hidden;
     z-index: 9999;
-    transition: all ease .3s;
+    transition: all ease .2s;
     cursor: pointer;
     span {
       display: block;
@@ -421,7 +422,7 @@ header {
       height: 6px;
       margin-bottom: 6px;
       background: white;
-      transition: all ease .3s;
+      transition: all ease .2s;
     }
     &:hover {
       padding-top: 4px;
