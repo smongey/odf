@@ -160,63 +160,66 @@ $(window).scroll(function(e) {
 
 
 
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || $(window).width() < 499) {
+	console.log('is phone');
+	
+} else {
+	console.log('is not phone');
 
+	(function($) {
 
+	  /**
+	   * Copyright 2012, Digital Fusion
+	   * Licensed under the MIT license.
+	   * http://teamdf.com/jquery-plugins/license/
+	   *
+	   * @author Sam Sehnert
+	   * @desc A small plugin that checks whether elements are within
+	   *     the user visible viewport of a web browser.
+	   *     only accounts for vertical position, not horizontal.
+	   */
 
+	  $.fn.visible = function(partial) {
+	    
+	      var $t            = $(this),
+	          $w            = $(window),
+	          viewTop       = $w.scrollTop(),
+	          viewBottom    = viewTop + $w.height(),
+	          _top          = $t.offset().top + 150,
+	          _bottom       = _top + $t.height(),
+	          compareTop    = partial === true ? _bottom : _top,
+	          compareBottom = partial === true ? _top : _bottom;
+	    
+	    return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
 
-(function($) {
+	  };
+	    
+	})(jQuery);
 
-  /**
-   * Copyright 2012, Digital Fusion
-   * Licensed under the MIT license.
-   * http://teamdf.com/jquery-plugins/license/
-   *
-   * @author Sam Sehnert
-   * @desc A small plugin that checks whether elements are within
-   *     the user visible viewport of a web browser.
-   *     only accounts for vertical position, not horizontal.
-   */
+	var allMods = $(".anim");
 
-  $.fn.visible = function(partial) {
-    
-      var $t            = $(this),
-          $w            = $(window),
-          viewTop       = $w.scrollTop(),
-          viewBottom    = viewTop + $w.height(),
-          _top          = $t.offset().top + 150,
-          _bottom       = _top + $t.height(),
-          compareTop    = partial === true ? _bottom : _top,
-          compareBottom = partial === true ? _top : _bottom;
-    
-    return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+	allMods.each(function(i, el) {
+	  var el = $(el);
+	  if (el.visible(true)) {
+	    el.addClass("already-visible"); 
+	  } else {
 
-  };
-    
-})(jQuery);
+		  el.css('opacity', 0)
+	  } 
+	});
 
+	$(window).scroll(function(event) {
+	  
+	  allMods.each(function(i, el) {
+	    var el = $(el);
+	    if (el.visible(true)) {
+	      el.addClass("come-in"); 
+	    } 
+	  });
+	  
+	});
 
-var allMods = $(".anim");
-
-allMods.each(function(i, el) {
-  var el = $(el);
-  if (el.visible(true)) {
-    el.addClass("already-visible"); 
-  } else {
-
-	  el.css('opacity', 0)
-  } 
-});
-
-$(window).scroll(function(event) {
-  
-  allMods.each(function(i, el) {
-    var el = $(el);
-    if (el.visible(true)) {
-      el.addClass("come-in"); 
-    } 
-  });
-  
-});
+}
 
 $(window).load(function(){
 	$(".hold").each(function(i,el) {

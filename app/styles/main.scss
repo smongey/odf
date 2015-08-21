@@ -784,6 +784,26 @@ input, ul, li {
     }
   }
 
+  .menu {
+    width: 100%;
+    height: 80%;
+    padding: 20px;
+    //transform: translateX(0) translateY(-100%);
+    
+    &.open {
+      //transform: translateX(0) translateY(0%);
+    }
+    .nav {
+      position: absolute;
+      bottom: $vertical / 4;
+    }
+    .close {
+      top: 20px;
+      right: 20px;
+    }
+  }
+
+
   input, ul, li {
     font: 15px/22px $oslo;  
   }
@@ -791,7 +811,7 @@ input, ul, li {
   .details {
     display: none;
   }
-   section {
+  section {
     padding: $vertical / 3 0 0 0;
   }
 
@@ -803,7 +823,9 @@ input, ul, li {
     width: 100%;
     margin-bottom: $vertical / 3;
   }
-  
+  .intro {
+    padding-top: $vertical / 4;
+  }
   .hero {
     padding: 0 9%;
     h1 {
