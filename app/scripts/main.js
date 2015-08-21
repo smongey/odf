@@ -20,19 +20,6 @@ $('.hidden').on('click', function(){
 });
 
 
-
-// $(document).ready(function(){
-// 	$('.nav li').each(function(i) {
-// 	  $(this).delay(i*500).addClass('loadin');
-// 	  // console.log('menu')
-// 	});
-// });
-
-
-
-
-
-
 // Change width value on page load
 $(document).ready(function(){
     responsive_resize();
@@ -67,9 +54,6 @@ function responsive_resize(){
 	  $('body').removeClass("mobile");
 	}
 }
-
-
-
 
 
 function animMenuItems(what) {
@@ -218,7 +202,6 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 	  });
 	  
 	});
-
 }
 
 $(window).load(function(){
