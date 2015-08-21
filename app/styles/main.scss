@@ -936,6 +936,7 @@ input, ul, li {
     }
   }
   .contact {
+    margin-bottom: $vertical / 3;
     .full {
       margin-bottom: 0;
     }
@@ -969,6 +970,7 @@ input, ul, li {
   }
   footer { 
     height: 150px;
+    position: relative;
     .full {
       margin: 0;
     }
