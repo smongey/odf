@@ -675,6 +675,7 @@ header {
   }
   input[type="text"]{
     display: block;
+    border-radius: 0;
     float: left;
     background: none;
     outline: none;
@@ -694,6 +695,7 @@ header {
   }
   input[type="submit"]{
     display: block;
+    border-radius: 0;
     position: relative;
     float: right;
     background: none;
