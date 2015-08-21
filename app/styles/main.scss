@@ -23,6 +23,7 @@ a { text-decoration: none; }
 ::-moz-placeholder { color: white; }
 :-ms-input-placeholder { color: white; }
 
+
 .wrap { 
   width: 100%; 
   overflow: auto; 
@@ -35,6 +36,7 @@ section {
   width: 100%;
   overflow: auto;
   padding: $vertical 0 0 0;
+  overflow: hidden;
 }
 
 section div, footer div { float: left; }
@@ -375,6 +377,7 @@ header {
   padding-top: $vertical / 1.5;
   position: relative;
   overflow: hidden;
+  z-index: 5555;
   .logo {
     font-weight: 700;
     text-transform: uppercase;
@@ -435,6 +438,9 @@ header {
 }
 
 .about {
+  background: white;
+  position: relative;
+  z-index: 5555;
   .text {
     margin-bottom: $vertical;
   }
@@ -446,6 +452,9 @@ header {
 }
 
 .news {
+  background: white;
+  position: relative;
+  z-index: 5555;
   .full {
     margin-bottom: $vertical;
   }
@@ -497,16 +506,17 @@ header {
   }
 }
 
-.areas, .contact {
+.areas {
   background: $slate;
   color: white;
+  position: relative;
+  z-index: 5555;
   .info {
-    padding: 30px 35px 35px 35px;
+    padding: 30px 35px 45px 35px;
     line-height: 0;
   }
   p {
     padding-bottom: $vertical / 4;
-    height:86px;
   }
   img {
     transition: all .2s ease .2s;
@@ -539,9 +549,6 @@ header {
       transition: all ease .15s;
     }
   }  
-}
-
-.areas {
   .third {
     background: white;
     color: $slate;
@@ -549,9 +556,15 @@ header {
   .full {
     margin-bottom: $vertical;
   }
+  p {
+    height:86px;
+  }
 }
 
 .exhibitor {
+  background: white;
+  position: relative;
+  z-index: 5555;
   .full {
     margin-bottom: $vertical;
     &:last-child {
@@ -568,17 +581,29 @@ header {
       float: left;
       width: 50%;
       color: white;
-      padding: 60px 15% 60px 60px;
+      padding: 60px 20% 60px 60px;
       
       h3 {
         font-weight: 500;
       }
       .become {
         position: absolute;
-        bottom: 50px;
+        bottom: $vertical / 2;
         color: white;
         border: 2px solid white;
         padding: 30px 50px 27px;
+        transition: all $cubic .3s;
+        span {
+          transition: all $cubic 1s;
+        }
+        &:hover {
+          background: white;
+          color: $slate;
+          padding-left: 60px;
+          span {
+            margin-left: 10px;
+          }
+        }
       }
     }
     .image {
@@ -591,6 +616,9 @@ header {
 }
 
 .team {
+  background: white;
+  position: relative;
+  z-index: 5555;
   .full {
     margin-bottom: $vertical;
     &:last-child {
@@ -617,22 +645,33 @@ header {
 }
 
 .contact {
+  background: $slate;
+  color: white;
   height: inherit;
   overflow: hidden;
+  position: relative;
+  z-index: 5555;
+  margin-bottom: 180px;
   & > .full {
     margin-bottom: $vertical;
   }
-  p {
+  p, a {
     color: white;
   }
   .half .full {
     margin: $vertical / 2 0 0 0;
+  }
+  ul li:first-child {
+    margin-bottom: 20px;
   }
   .fluid {
     line-height: 0;
     img {
       display: inline-block;
     }
+  }
+  .full .half .full p {
+    padding-bottom: 0;
   }
   input[type="text"]{
     display: block;
@@ -643,9 +682,19 @@ header {
     padding: 22px 20px 20px 23px;
     color: white;
     width: calc(100% / 3 * 2 + 40px);
+    transition: all $cubic .5s;
+    &:hover {
+      background: rgba(255,255,255,.1);
+      cursor: pointer;
+    }
+    &:focus {
+      background: white;
+      color: $slate;
+    }
   }
   input[type="submit"]{
     display: block;
+    position: relative;
     float: right;
     background: none;
     outline: none;
@@ -654,11 +703,19 @@ header {
     padding: 22px 20px 20px 23px;
     color: white;
     width: calc(100% / 3 - 40px);
-    
+    transition: all $cubic .5s;
+    &:hover {
+      background: white;
+      color: $slate;
+      cursor: pointer;
+    }
   }
 }
 
 footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
   .full {
     margin: $vertical / 2 0;
   }
@@ -692,3 +749,265 @@ p, a  {
 input, ul, li {
   font: 20px/28px $oslo;  
 }
+
+
+// Responsive
+
+//  Phone
+.phone {
+
+  .grid .col{
+    width: calc(100% / 2 - 10px);
+    margin-right: 20px;
+    &:nth-child(2) {
+      margin-right: 0;
+    }
+    &:nth-child(n+3) {
+      display: none;
+    }
+  }
+
+  h1, h2 {
+    font: 700 24px/28px $oslo;
+  }
+
+  h3, h4, h5  {
+    font: 700 18px/24px $oslo;
+  }
+
+  p, a  {
+    font: 15px/22px $oslo;
+    // margin-bottom: 28px;
+    // color: $slate;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  input, ul, li {
+    font: 15px/22px $oslo;  
+  }
+
+  .details {
+    display: none;
+  }
+   section {
+    padding: $vertical / 3 0 0 0;
+  }
+
+  .logo {
+    font: 700 28px/26px $oslo;
+  }
+
+  .half, .third {
+    width: 100%;
+    margin-bottom: $vertical / 3;
+  }
+  
+  .hero {
+    padding: 0 9%;
+    h1 {
+      font-weight: 500;
+    }
+  }
+  .cookiemonster {
+    height: 90px;
+    p {
+      width: 70%;
+    }
+    a.close {
+      font-size: 40px;
+      margin-top: 12px;
+      &:hover {
+        transform: scale(1);
+      }
+    }
+    &:hover {
+      padding:23px 0;
+    }
+    &.hide {
+      bottom: -90px;
+    }
+  }
+  .about {
+    .text {
+      margin-bottom: 0;
+    }
+    .images .half {
+      margin-bottom: $vertical / 6;
+    }
+  }
+  .news {
+    .profile .info {
+      padding: 20px;
+      p {
+        height: inherit;
+        padding-bottom: 0;
+      }
+    }
+    .full {
+      margin-bottom: $vertical / 3;
+      &:first-child {
+        padding-right: 60%;
+      }
+    }
+    .half {
+      margin-bottom: $vertical / 6;
+    }
+  }
+  .areas {
+    .full {
+        margin-bottom: $vertical / 3;
+    }
+    .third {
+      margin-bottom: 20px;
+    }
+    .info {
+      padding: 20px 20px 30px 20px;
+      p {
+        height: inherit;
+        padding-bottom: 15px;
+      }
+      span.more {
+        padding-bottom: -10px;
+      }
+    }
+  }
+  .exhibitor {
+    .full {
+      margin-bottom: $vertical / 3;
+    }
+    .exhibit {
+      .info {
+        position: relative;
+        width: 100%;
+        padding: 20px 30% 150px 20px;
+        
+      }
+      .info h3 {
+        font: 500 19px/25px $oslo;
+      }
+      .info .become {
+        bottom: 20px;
+        padding: 15px 22px;
+        border-width: 1px;
+      }
+      .image {
+        width: 100%;
+      }
+    }
+  }
+  .team {
+    padding-top: 0;
+    .full, .fluid {
+      margin-bottom: $vertical / 3;
+    }
+    .fluid img {
+      min-width: 200%;
+      transform: translateX(-25%);
+    }
+    .third {
+      margin-bottom: $vertical / 3;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .contact {
+    .full {
+      margin-bottom: 0;
+    }
+    .third {
+      margin-bottom: 20px;
+    }
+    ul {
+      float: left;
+    }
+    li {
+      float: right;
+      width: calc(50% - 10px);
+      &:first-child {
+        width: calc(50% + 10px);
+        float: left;
+        height: 100px;
+      }
+    }
+    .full {
+      margin-top: 0;
+      &:last-child {
+        margin-top: 20px;
+      }
+    }
+    input[type="text"] {
+      width: 70%;
+    }
+    input[type="submit"] {
+      width: 30%;
+    }
+  }
+  footer { 
+    height: 150px;
+    .full {
+      margin: 0;
+    }
+    .third {
+      margin-bottom: $vertical / 6;
+    }
+  }
+}
+.tablet {
+  
+}
+.sdesktop {
+
+}
+.desktop {
+  // section {
+  //   padding: $vertical / 2 0 0 0;
+  // }
+}
+.super {
+
+}
+
+.mobile {
+  //  background: yellow !important;
+}
+
+
+// Transition In
+.hold {
+  opacity: 0 !important;
+  transform: translateY(50px);
+}
+
+.intro {
+  .sixth, .burger {
+    transition: all $cubic 1s;
+  }
+
+  .hero {
+    transition: all $cubic 1.5s;
+  }
+}
+
+
+
+.come-in {
+  transform: translateY(150px);
+  opacity: 1;
+  animation: come-in 1.5s $cubic forwards;
+}
+.come-in:nth-child(odd) {
+  animation-duration: 1s;
+}
+.already-visible {
+  transform: translateY(0);
+  animation: none;
+  opacity: 1;
+}
+
+@keyframes come-in {
+  to { transform: translateY(0); opacity: 1; }
+}
+
