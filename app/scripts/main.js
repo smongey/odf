@@ -1,12 +1,22 @@
 /* jshint devel:true */
 // console.log('\'Allo \'Allo!');
+function l(honk) {
+	console.log(honk);
+}
+
+var $w = $(window),
+	$d = $(document);
+
+
+
+
 
 $('.cookiemonster a.close').on('click', function(e){
 	e.preventDefault();
 	$('.cookiemonster').addClass('hide');
 });
 
-$(document).keypress(function (e) {
+$d.keypress(function (e) {
     console.log(e.keyCode);
     if (e.keyCode == 103) {
     	$('.grid').toggleClass('active');
@@ -21,18 +31,18 @@ $('.hidden').on('click', function(){
 
 
 // Change width value on page load
-$(document).ready(function(){
+$d.ready(function(){
     responsive_resize();
 });
 
 // Change width value on user resize, after DOM
-$(window).resize(function(){
+$w.resize(function(){
      responsive_resize();
 });
 
 function responsive_resize(){
 
-	var current_width = $(window).width();
+	var current_width = $w.width();
 	//do something with the width value here!
 	if(current_width < 499) {
 		$('body').removeClass("tablet sdesktop desktop super").addClass("phone");
@@ -120,10 +130,10 @@ $('.menu .close').on('click', function(){
 
 var lastScrollTop = 0;
 
-$(window).scroll(function(e) {
-
+function menuReveal(event) {
+	
 	var st = $(this).scrollTop();
-
+	console.log(st);
     if(st > lastScrollTop) {
         // console.log('downscroll');
     	$('header').addClass('hidden');
@@ -136,19 +146,33 @@ $(window).scroll(function(e) {
 
     lastScrollTop = st;
 
-    if ($(window).scrollTop() < 100) { 
+    if ($w.scrollTop() < 100) { 
     	$('header').addClass('hidden');
     }
+}
 
-});
+
+// $(window).scroll(function(e) {
+
+// 	$.throttle( 250, menuReveal );
+// 	// menuReveal();
+
+// });
 
 
 
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || $(window).width() < 499) {
+
 	console.log('is phone');
+
+	$('body').bind( 'touchmove', function(e){
+		menuReveal();
+	});
 	
 } else {
+
 	console.log('is not phone');
+	$w.scroll( $.throttle( 100, menuReveal ) );
 
 	(function($) {
 
@@ -192,7 +216,7 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 	  } 
 	});
 
-	$(window).scroll(function(event) {
+	$w.scroll(function(event) {
 	  
 	  allMods.each(function(i, el) {
 	    var el = $(el);
@@ -204,7 +228,8 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 	});
 }
 
-$(window).load(function(){
+
+$w.load(function(){
 	$(".hold").each(function(i,el) {
 		var $this = $(this);
 		setTimeout(function() {
