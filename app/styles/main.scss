@@ -1,7 +1,8 @@
 // bower:scss
 // endbower
 
-* { box-sizing: border-box; -webkit-box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+* { box-sizing: border-box; -webkit-box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale; }
 
 // Variables
 $slate: #231f20;
@@ -249,7 +250,10 @@ header {
       content: "\2192";
       padding-right: 5px;
     }
-    a:hover, .active {
+    a:hover {
+      opacity: .8;
+    }
+    .active {
       margin-left: 0px;
       opacity: 1;
     }
@@ -567,7 +571,7 @@ header {
   .full {
     margin-bottom: $vertical;
     &:last-child {
-      margin-bottom: 0;
+      margin-bottom: $vertical;
     }
   }
 
@@ -650,7 +654,7 @@ header {
   overflow: hidden;
   position: relative;
   z-index: 5555;
-  margin-bottom: 180px;
+  margin-bottom: 150px;
   & > .full {
     margin-bottom: $vertical;
   }
@@ -1270,10 +1274,13 @@ input, ul, li {
       padding: 15px 20px;
       bottom: 50px;
     }
+    .full:last-child {
+      margin-bottom: 0;
+    }
   }
 
   .team {
-    padding-top: 0;
+    padding-top: $vertical / 2;
   
     .fluid {
       margin-bottom: $vertical / 2;

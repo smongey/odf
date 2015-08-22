@@ -240,3 +240,80 @@ $w.load(function(){
 	});
 });
 
+
+
+
+
+
+
+
+$w.scroll(function(e){
+
+	var	$scrollMenu = $('#scroll-menu'),
+		scrollButtons = $('.nav li a'),
+		arrivalSections = $('.scroll-section');
+
+	arrivalSections.each(function(i) {
+		var $section = $(arrivalSections[i]),
+			sectionTop = $section.offset().top,
+			sectionBottom = (sectionTop + $section.height()),
+			name = $section[0].id, 
+			anchor = '#' + name,
+			scrollBtn = $('.nav li a[href=' + anchor +']');
+
+		if ((e.currentTarget.pageYOffset > (sectionTop - 2)) && (e.currentTarget.pageYOffset < sectionBottom)) {
+			scrollBtn.addClass('active');
+		} else {
+			scrollBtn.removeClass('active');
+		}
+	});
+
+});
+
+
+$('.nav li a').click(function(e) {
+  e.preventDefault();
+
+  var hash = $(this).context.hash,
+  	selector = '.nav li a[href='+ hash +']',
+  	honk = $(hash).offset().top;
+
+	animMenuItems(false);
+
+	// scroll window to section
+	$('body').animate({
+		scrollTop: honk - 0
+	}, 1000);
+
+	return false
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
