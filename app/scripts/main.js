@@ -133,21 +133,23 @@ var lastScrollTop = 0;
 function menuReveal(event) {
 	
 	var st = $(this).scrollTop();
-	console.log(st);
-    if(st > lastScrollTop) {
-        // console.log('downscroll');
+
+	if(st > lastScrollTop) {
+    
     	$('header').addClass('hidden');
+    
     } else {
-        // console.log('upscroll');
-        // if ($(window).scrollTop() > $(window).height()) { 
+    
         $('header').removeClass('hidden');
-        // }
+    
     }
 
     lastScrollTop = st;
 
     if ($w.scrollTop() < 100) { 
+    
     	$('header').addClass('hidden');
+    
     }
 }
 
