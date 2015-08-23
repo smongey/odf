@@ -10,5 +10,13 @@
      ☐ research firstframe / 124m2 for others
 
  ☐ ajax page transitions
+     ☐ make dynamic through clicked thumb rather than static link
+     ☐ implement pushstate
 
+
+
+ ☐ kirby cms integration
+     ☐ break into templates
+     ☐ make fields
+     ☐ research picture elements with fields
  
