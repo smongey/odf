@@ -6,6 +6,7 @@
     "foundation": "~5.5.2"
   },
   "devDependencies": {
-    "jquery-throttle-debounce": "*"
+    "jquery-throttle-debounce": "*",
+    "jquery-easing": "*"
   }
 }

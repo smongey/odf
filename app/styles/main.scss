@@ -25,7 +25,7 @@ a { text-decoration: none; }
 :-ms-input-placeholder { color: white; }
 
 
-.wrap { 
+#wrap { 
   width: 100%; 
   overflow: auto; 
   position: relative;
@@ -381,6 +381,16 @@ header {
   position: relative;
   overflow: hidden;
   z-index: 5555;
+  &.inverse {
+    height: inherit;
+    background: transparent;
+    .logo {
+      color: $slate;
+    }
+    .burger span {
+      background: $slate;
+    }
+  }
   .logo {
     font-weight: 700;
     text-transform: uppercase;
@@ -407,6 +417,16 @@ header {
     }
     a.more {
       color: white;
+      transition: all ease .2s;
+      &:hover {
+        opacity: .5;
+        span {
+          margin-left: 10px;
+        }
+      }
+    }
+    .more span {
+      transition: all $cubic .7s;
     }
   }
 
@@ -478,7 +498,7 @@ header {
       color: white;
     }
     img {
-      transition: all .2s ease .15s;
+      transition: all ease .2s;
     }
     &:last-child, &:nth-last-child(2) {
       margin-bottom: 0;
@@ -487,7 +507,7 @@ header {
       display: block;
       &:hover {
         img {
-          opacity: .9;
+          opacity: .8;
         }
         .more:after {
           opacity: 0.1;
@@ -508,6 +528,39 @@ header {
     }
   }
 }
+
+section.article {
+  background: white;
+  position: relative;
+  z-index: 5555;
+  transition: all $cubic 1s;
+  .full {
+    transition: all $cubic 1s;
+    .title {
+      width: 100%;
+      text-align: center;
+      padding: 0 20%;
+      h1 {
+        margin-bottom: $vertical / 5;
+      }
+      .date {
+        font: 20px/28px $oslo;
+      }
+    }
+    img {
+      margin: $vertical / 2 0;
+      padding: 0 calc(100% / 6 - 50px);
+    }
+    .text {
+      padding: 0 calc(100% / 6 + 10px);
+    }
+    h3 {
+      font: 700 20px/28px $oslo;
+      margin-bottom: 28px;
+    }
+  }
+}
+
 
 .areas {
   background: $slate;
@@ -555,6 +608,7 @@ header {
   .third {
     background: white;
     color: $slate;
+    overflow: hidden;
   }
   .full {
     margin-bottom: $vertical;
@@ -645,6 +699,12 @@ header {
   .full .third {
     margin-bottom: $vertical / 1.5;
   }
+  a {
+    transition: color .2s ease-out;
+    &:hover {
+      color: rgba(255,255,255,.4);
+    }
+  }
 }
 
 .contact {
@@ -660,6 +720,12 @@ header {
   }
   p, a {
     color: white;
+  }
+  a {
+    transition: color .2s ease-out;
+    &:hover {
+      color: rgba(255,255,255,.4);
+    }
   }
   .half .full {
     margin: $vertical / 2 0 0 0;
@@ -678,6 +744,7 @@ header {
   }
   input[type="text"]{
     display: block;
+    height: 75px;
     border-radius: 0;
     float: left;
     background: none;
@@ -698,6 +765,7 @@ header {
   }
   input[type="submit"]{
     display: block;
+    height: 75px;
     border-radius: 0;
     position: relative;
     float: right;
@@ -715,6 +783,10 @@ header {
       cursor: pointer;
     }
   }
+  #map {
+    width: 100%;
+    height: 600px;
+  } 
 }
 
 footer {
@@ -746,7 +818,29 @@ footer {
       }
     }
 
-
+    a.totop {
+      display: block;
+      float: right;
+      width: $vertical / 2;
+      height: $vertical / 2;
+      border: 2px solid $slate;
+      text-align: center;
+      transition: all ease .2s;
+      position: relative;
+      span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all ease 1s;
+      }
+      &:hover {
+        background: $slate;
+        span {
+          color: white;
+        }
+      }
+    } 
   }
 }
 
@@ -906,6 +1000,23 @@ input, ul, li {
       margin-bottom: $vertical / 6;
     }
   }
+
+  section.article {
+    padding: $vertical / 2 0; 
+    .full {
+      .title {
+        padding: 0;
+      }
+      img {
+        padding: 0;
+        margin: 20px 0;
+      }
+      .text {
+        padding: 0;
+      }
+    }
+  }
+
   .areas {
     .full {
         margin-bottom: $vertical / 3;
@@ -996,6 +1107,11 @@ input, ul, li {
     input[type="submit"] {
       width: 30%;
     }
+    
+    #map {
+      height: 500px;
+    }
+
   }
   footer { 
     height: 150px;
@@ -1005,6 +1121,12 @@ input, ul, li {
     }
     .third {
       margin-bottom: $vertical / 6;
+      &:last-child {
+        position: absolute;
+        left: -20px;
+        top: 0px;
+        width: inherit;
+      }
     }
   }
 }
@@ -1114,6 +1236,21 @@ input, ul, li {
     }
   }
 
+  section.article {
+    padding: $vertical / 2 0; 
+    .full {
+      .title {
+        padding: 0 10%;
+      }
+      img {
+        padding: 0;
+      }
+      .text {
+        padding: 0 calc(100% / 6);
+      }
+    }
+  }
+
   .areas {
     .full {
       margin-bottom: $vertical / 2;
@@ -1215,18 +1352,62 @@ input, ul, li {
         font: 15px/22px $oslo;
       }
     }
+
+    #map {
+      height: 500px;
+    }
+
   }
 
   footer {
     position: relative;
   }
 
+  // landscape phone 
+
+  @media all and (max-width:667px) and (min-width: 375px) {
+    
+    .hero {
+      padding: 20px 100px;
+      transform: translate(-50%, -40%);
+      h1 {
+        font: 500 24px/28px $oslo; 
+      }
+    }
+
+    
+
+  }
+
+
 }
+
+.sdesktop {
+  section.article {
+    .full img {
+      padding: 0;
+    }
+
+    .full .text {
+      padding: 0 calc(100% / 6);
+    }
+  }
+}
+
 
 .sdesktop, .desktop {
 
   section {
     padding: $vertical / 2 0 0 0;
+  }
+  .article {
+    padding: 0 0 $vertical 0;
+    h1 {
+      font: 700 50px/60px $oslo; 
+    }
+    p {
+      font: 20px/28px $oslo;
+    }
   }
 
   h1, h2 {
@@ -1297,8 +1478,37 @@ input, ul, li {
   // section {
   //   padding: $vertical / 2 0 0 0;
   // }
+  .contact {
+    margin-bottom: 180px;
+  }  
 }
 .super {
+
+  section.article {
+    padding: 0 0 $vertical 0;
+    .full {
+      p, h3, .date, a {
+        font: 24px/32px $oslo;
+      }
+      h3 {
+        font-weight: 700;
+      }
+    }
+
+    .full img {
+      padding: 0 calc(100% / 6 - 80px);
+    }
+
+    .full .text {
+      padding: 0 calc(100% / 6 + 60px);
+    }
+  }
+
+
+
+  .contact {
+    margin-bottom: 180px;
+  }
 
 }
 
