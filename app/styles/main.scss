@@ -1383,6 +1383,11 @@ input, ul, li {
 }
 
 .sdesktop {
+
+  h3, h4, h5  {
+    font: 700 24px/34px $oslo;
+  }
+
   section.article {
     .full img {
       padding: 0;
@@ -1415,7 +1420,7 @@ input, ul, li {
   }
 
   h3, h4, h5  {
-    font: 700 24px/34px $oslo;
+    font: 700 30px/40px $oslo;
   }
 
   p, a,  {
