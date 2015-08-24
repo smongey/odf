@@ -26,15 +26,9 @@
     <meta name="msapplication-TileImage" content="img/fav/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <!-- build:css styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- <link rel="stylesheet" href="/bower_components/foundation/css/foundation.css" /> -->
-    <!-- endbower -->
-    <!-- endbuild -->
+    <link rel="stylesheet" href="styles/vendor.css">
 
-    <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
     <script src="/bower_components/picturefill/dist/picturefill.min.js"></script>
 
@@ -44,7 +38,46 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    @@include('partials/_header.html')
+        <header class="hidden loading">
+      <div class="main full">
+        <a href="index.html" class="logo">ODF</a>
+      </div>
+      <div class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+
+
+
+    <nav class="menu">
+      <ul class="lang">
+        <li><a href="#no" class="active">No</a></li>
+        <li><a href="#en">En</a></li>
+      </ul>
+      <ul class="nav">
+        <li><a href="#om" class="active">Om ODF</a></li>
+        <li><a href="#nyheter">Nyheter</a></li>
+        <li><a href="#satningsomrader">Satnings-<br/>omr&aring;der</a></li>
+        <li><a href="#bli-utstiller">Bli utstiller</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#kontaktinfo">Kontaktinfo</a></li>
+      </ul>
+      <div class="close">
+        <span></span>
+        <span></span>
+      </div>  
+    </nav>
+
+
+    <div class="cookiemonster loading">
+      <div class="full">
+        <p>Ønsker du å stille ut på Oslo Design Fair? Les mer info <a href="#">her</a></p>
+        <a href="#" class="close">&times;</a>
+      </div>
+    </div>
+
 
     <div id="wrap">
 
@@ -69,7 +102,7 @@
         <section class="article">
           <div class="full hold">
             <div class="title">
-                <h1>Intervju med Kreativ leder Andreas Engesvik</h1>
+                <h1>2. Intervju med Kreativ leder Andreas Engesvik</h1>
                 <span class="date">20.08.2015</span>
             </div>
           </div>
@@ -89,7 +122,7 @@
 
           </div>
 
-          <div class="full hold anim">
+          <div class="full anim">
             <div class="text">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste obcaecati quasi sunt, neque sapiente, accusantium odit expedita, distinctio dignissimos nulla vel. Nesciunt neque expedita beatae. Iure quas recusandae delectus, autem molestiae optio nemo culpa voluptatum similique commodi dolorem alias reprehenderit obcaecati error libero quasi quo tempore neque accusantium laborum deleniti.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, reprehenderit!</p>
@@ -97,7 +130,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum saepe, ullam voluptatem, minima ipsam maiores.</p>
             </div>
           </div>
-          <div class="full hold anim">
+          <div class="full anim">
             <picture>
               <source media="(max-width: 480px)"
               srcset="http://placehold.it/480x480/f2f2f2 1x, http://placehold.it/900x900/ffeeee 2x">
@@ -110,7 +143,7 @@
             </picture>
           </div>
 
-          <div class="full hold anim">
+          <div class="full anim">
             <div class="text">
                 <h3>Norges viktigste plattform</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste obcaecati quasi sunt, neque sapiente, accusantium odit expedita, distinctio dignissimos nulla vel. Nesciunt neque expedita beatae. Iure quas recusandae delectus, autem molestiae optio nemo culpa voluptatum similique commodi dolorem alias reprehenderit obcaecati error libero quasi quo tempore neque accusantium laborum deleniti.</p>
@@ -122,15 +155,93 @@
 
         </section>
 
-      <!-- @@include('partials/_home.html') -->
+      
 
-      @@include('partials/_contact.html')
+              <section class="contact scroll-section" id="kontaktinfo">
+          <div class="full">
+            <div class="half anim">
+              <h2>Besøks- og kontaktinformasjon</h2>
+            </div>
 
-      @@include('partials/_footer.html')
+            <div class="half">
+              <div class="third anim">
+                <ul>
+                  <li>Oslo<br/>Design Fair</li>
+                  <li>Postboks 75, 2001 Lillestrøm</li>
+                  <li>+47 66 93 91 00</li>
+                  <li>odf@messe.no</li>
+                </ul>
+              </div>
+              <div class="third anim">
+                <ul>
+                  <li>Norges<br/>Varemesse</li>
+                  <li>Postboks 75, 2001 Lillestrøm</li>
+                  <li>+47 66 93 91 00</li>
+                  <li>odf@messe.no</li>
+                </ul>
+              </div>
+
+              <div class="third anim">
+                <ul>
+                  <li>Følg oss<br/><br/></li>
+                  <li><a href="#">Facebook</a></li>
+                  <li><a href="#">Instagram</a></li>
+                  <li><a href="#">#oslodesignfair</a></li>
+                  <li><a href="#">@oslodesignfair</a></li>
+                </ul>
+              </div>            
+              
+              <div class="full anim">
+                <p>Meld deg på<br/>vårt nyhetsbrev</p>
+              </div>
+              
+              <div class="full">
+                <input type="text" placeholder="Skriv inn e-post">
+                <input type="submit" value="Send &rarr;">
+              </div>
+            </div>
+          </div>
+
+          <div class="fluid map anim">
+            <div id="map">
+            </div>
+          </div>
+
+        </section>
+
+              <footer>
+          <div class="full">
+            <div class="third">
+              <p>Oslo design fair<br/>
+              2015 &copy;</p>
+            </div>
+
+            <div class="third">
+              <ul>
+                <li>Design: <a href="http://bielkeyang.no/" target="_blank">Bielke&amp;Yang</a></li>
+                <li>Kode: <a href="http://workbypost.com" target="_blank">Post</a></li>
+              </ul>
+            </div>
+
+            <div class="third">
+              <a href="#" class="totop">
+                <span>&uarr;</span>
+              </a>
+            </div>
+          </div>
+        </footer>
 
     </div>
 
-    @@include('partials/_grid.html') 
+    
+    <div class="grid">
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+    </div> 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -142,25 +253,8 @@
       ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
 
-    <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="/bower_components/modernizr/modernizr.js"></script>
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/bower_components/fastclick/lib/fastclick.js"></script>
-    <script src="/bower_components/jquery.cookie/jquery.cookie.js"></script>
-    <script src="/bower_components/jquery-placeholder/jquery.placeholder.js"></script>
-    <script src="/bower_components/foundation/js/foundation.js"></script>
-    <script src="/bower_components/foundation/js/foundation/foundation.magellan.js"></script>
-    <script src="/bower_components/jquery-throttle-debounce/jquery.ba-throttle-debounce.min.js"></script>
-    <script src="/bower_components/jquery-easing/jquery.easing.min.js"></script>
-    <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrQ7GK_GWWWMLrsajUtW5b2kYyS9J-CTw&callback=initMap">
-    </script>
-    <!-- endbower -->
-    <!-- endbuild -->
+    <script src="scripts/vendor.js"></script>
 
-        <!-- build:js scripts/main.js -->
         <script src="scripts/main.js"></script>
-        <!-- endbuild -->
 </body>
 </html>

@@ -1,23 +1,22 @@
 
- ☐ loading intro graphic
+ ✔ loading intro graphic @done (15-08-24 21:47)
 
- ☐ picture element for current images
+ ✔ picture element for current images @done (15-08-24 21:47)
  
- ☐ polyfill js
+ ✔ polyfill js @done (15-08-24 20:55)
  
-     ☐ picture element
-     ☐ history.js
-     ☐ test for others
+     ✔ picture element @done (15-08-24 20:30)
+     ✔ history.js @done (15-08-24 20:37)
+     ✔ test for others @done (15-08-24 20:55)
 
- ☐ ajax page transitions
-     ☐ make dynamic through clicked thumb rather than static link
-     ☐ implement pushstate
-
+ ✔ ajax page transitions @done (15-08-24 20:30)
+     ✔ make dynamic through clicked thumb rather than static link @done (15-08-24 20:10)
+     ✔ implement pushstate @done (15-08-24 20:30)
 
  ☐ ask about map marker graphic 
  ☐ implement marker graphic
 
- ☐ intro read more to jump down to about section
+ ✔ intro read more to jump down to about section @done (15-08-24 20:55)
 
  ☐ parrallax on intro hero text ???
 

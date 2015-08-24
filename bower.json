@@ -7,6 +7,8 @@
   },
   "devDependencies": {
     "jquery-throttle-debounce": "*",
-    "jquery-easing": "*"
+    "jquery-easing": "*",
+    "picturefill": "~2.3.1",
+    "history": "~1.8.0"
   }
 }
