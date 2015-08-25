@@ -4,6 +4,51 @@
 * { box-sizing: border-box; -webkit-box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; 
     -moz-osx-font-smoothing: grayscale; }
 
+@font-face {
+  font-family: 'Oslo';
+  src: url('/fonts/Oslo-design-fair-light-web.eot'); /* IE9 Compat Modes */
+  src: url('/fonts/Oslo-design-fair-light-web.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/fonts/Oslo-design-fair-light-web.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/fonts/Oslo-design-fair-light-web.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/fonts/Oslo-design-fair-light-web.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('/fonts/Oslo-design-fair-light-web.svg#svgFontName') format('svg'); /* Legacy iOS */
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Oslo';
+  src: url('/fonts/Oslo-design-fair-regular-web.eot'); /* IE9 Compat Modes */
+  src: url('/fonts/Oslo-design-fair-regular-web.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/fonts/Oslo-design-fair-regular-web.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/fonts/Oslo-design-fair-regular-web.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/fonts/Oslo-design-fair-regular-web.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('/fonts/Oslo-design-fair-regular-web.svg#svgFontName') format('svg'); /* Legacy iOS */
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Oslo';
+  src: url('/fonts/Oslo-design-fair-medium-web.eot'); /* IE9 Compat Modes */
+  src: url('/fonts/Oslo-design-fair-medium-web.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/fonts/Oslo-design-fair-medium-web.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/fonts/Oslo-design-fair-medium-web.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/fonts/Oslo-design-fair-medium-web.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('/fonts/Oslo-design-fair-medium-web.svg#svgFontName') format('svg'); /* Legacy iOS */
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Oslo';
+  src: url('/fonts/Oslo-design-fair-bold-web.eot'); /* IE9 Compat Modes */
+  src: url('/fonts/Oslo-design-fair-bold-web.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/fonts/Oslo-design-fair-bold-web.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/fonts/Oslo-design-fair-bold-web.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/fonts/Oslo-design-fair-bold-web.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('/fonts/Oslo-design-fair-bold-web.svg#svgFontName') format('svg'); /* Legacy iOS */
+  font-weight: 700;
+}
+
+
 // Variables
 $slate: #231f20;
 $granite: #1e191a;
@@ -11,7 +56,7 @@ $granite: #1e191a;
 $cubic: cubic-bezier(.09,.76,.29,1);
 
 $vertical: 120px;
-$oslo: 'Oslo Design Fair Beta 0.5', Helvetica, Arial, sans-serif;
+$oslo: 'Oslo', Helvetica, Arial, sans-serif;
 
 // General
 html { overflow-y: scroll; }

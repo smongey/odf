@@ -170,7 +170,7 @@ odf.$w.load(function(){
 
 	l(window.location.pathname);
 
-	if(window.location.pathname === "/" || window.location.pathname === "/odf/") {
+	if(window.location.pathname === "/" || window.location.pathname === "/en/" || window.location.pathname === "/en" || window.location.pathname === "/odf/") {
 
 		setTimeout(function(){
 			$('#preloader').addClass('out');			
