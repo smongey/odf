@@ -6,45 +6,45 @@
 
 @font-face {
   font-family: 'Oslo';
-  src: url('/fonts/Oslo-design-fair-light-web.eot'); /* IE9 Compat Modes */
-  src: url('/fonts/Oslo-design-fair-light-web.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/fonts/Oslo-design-fair-light-web.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/fonts/Oslo-design-fair-light-web.woff') format('woff'), /* Pretty Modern Browsers */
-       url('/fonts/Oslo-design-fair-light-web.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('/fonts/Oslo-design-fair-light-web.svg#svgFontName') format('svg'); /* Legacy iOS */
+  src: url('../fonts/Oslo-design-fair-light-web.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Oslo-design-fair-light-web.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Oslo-design-fair-light-web.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/Oslo-design-fair-light-web.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/Oslo-design-fair-light-web.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Oslo-design-fair-light-web.svg#svgFontName') format('svg'); /* Legacy iOS */
   font-weight: 300;
 }
 
 @font-face {
   font-family: 'Oslo';
-  src: url('/fonts/Oslo-design-fair-regular-web.eot'); /* IE9 Compat Modes */
-  src: url('/fonts/Oslo-design-fair-regular-web.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/fonts/Oslo-design-fair-regular-web.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/fonts/Oslo-design-fair-regular-web.woff') format('woff'), /* Pretty Modern Browsers */
-       url('/fonts/Oslo-design-fair-regular-web.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('/fonts/Oslo-design-fair-regular-web.svg#svgFontName') format('svg'); /* Legacy iOS */
+  src: url('../fonts/Oslo-design-fair-regular-web.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Oslo-design-fair-regular-web.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Oslo-design-fair-regular-web.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/Oslo-design-fair-regular-web.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/Oslo-design-fair-regular-web.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Oslo-design-fair-regular-web.svg#svgFontName') format('svg'); /* Legacy iOS */
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Oslo';
-  src: url('/fonts/Oslo-design-fair-medium-web.eot'); /* IE9 Compat Modes */
-  src: url('/fonts/Oslo-design-fair-medium-web.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/fonts/Oslo-design-fair-medium-web.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/fonts/Oslo-design-fair-medium-web.woff') format('woff'), /* Pretty Modern Browsers */
-       url('/fonts/Oslo-design-fair-medium-web.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('/fonts/Oslo-design-fair-medium-web.svg#svgFontName') format('svg'); /* Legacy iOS */
+  src: url('../fonts/Oslo-design-fair-medium-web.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Oslo-design-fair-medium-web.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Oslo-design-fair-medium-web.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/Oslo-design-fair-medium-web.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/Oslo-design-fair-medium-web.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Oslo-design-fair-medium-web.svg#svgFontName') format('svg'); /* Legacy iOS */
   font-weight: 500;
 }
 
 @font-face {
   font-family: 'Oslo';
-  src: url('/fonts/Oslo-design-fair-bold-web.eot'); /* IE9 Compat Modes */
-  src: url('/fonts/Oslo-design-fair-bold-web.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/fonts/Oslo-design-fair-bold-web.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/fonts/Oslo-design-fair-bold-web.woff') format('woff'), /* Pretty Modern Browsers */
-       url('/fonts/Oslo-design-fair-bold-web.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('/fonts/Oslo-design-fair-bold-web.svg#svgFontName') format('svg'); /* Legacy iOS */
+  src: url('../fonts/Oslo-design-fair-bold-web.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Oslo-design-fair-bold-web.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Oslo-design-fair-bold-web.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/Oslo-design-fair-bold-web.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/Oslo-design-fair-bold-web.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Oslo-design-fair-bold-web.svg#svgFontName') format('svg'); /* Legacy iOS */
   font-weight: 700;
 }
 
@@ -609,12 +609,14 @@ section.article {
   position: relative;
   z-index: 5555;
   transition: all $cubic 1s;
+  margin-top: 0px; 
   .full {
     transition: all $cubic 1s;
     .title {
       width: 100%;
       text-align: center;
       padding: 0 20%;
+      margin-bottom: $vertical / 2;
       h1 {
         margin-bottom: $vertical / 5;
       }
@@ -623,11 +625,19 @@ section.article {
       }
     }
     img {
-      margin: $vertical / 2 0;
+      margin: 0 0 $vertical / 2 0;
       padding: 0 calc(100% / 6 - 50px);
     }
     .text {
       padding: 0 calc(100% / 6 + 10px);
+    
+      figure {
+        margin-top: $vertical / 2;
+      }
+      figure img {
+        width: 160%;
+        margin-left: -30%;
+      }
     }
     h3 {
       font: 700 20px/28px $oslo;
@@ -782,6 +792,16 @@ section.article {
   }
 }
 
+.desktop .team .full .third, .sdesktop .team .full .third {
+  width: calc(100% / 2 - 30px);
+  &:nth-child(3n) {
+    margin-right: 60px;
+  }
+  &:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
 .contact {
   background: $slate;
   color: white;
@@ -798,15 +818,36 @@ section.article {
   }
   a {
     transition: color .2s ease-out;
-    &:hover {
-      color: rgba(255,255,255,.4);
-    }
   }
   .half .full {
     margin: $vertical / 2 0 0 0;
   }
   ul li:first-child {
     margin-bottom: 20px;
+  }
+  .third {
+    a {
+      position: relative;
+      &:hover{
+        &:after {
+          opacity: 0;
+          height: 2px;
+          bottom: -2px;
+        }
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background: white;
+        left: 0px;
+        bottom: -2px;
+        opacity: 1;
+        transition: all $cubic .2s;
+      }
+    }    
   }
   .fluid {
     line-height: 0;
@@ -1086,8 +1127,15 @@ input, ul, li {
         padding: 0;
         margin: 20px 0;
       }
+      figure {
+        margin: 0;
+      }
       .text {
         padding: 0;
+      }
+      .text figure img {
+        width: 100%;
+        margin-left: 0;
       }
     }
   }
@@ -1481,7 +1529,7 @@ input, ul, li {
     padding: $vertical / 2 0 0 0;
   }
   .article {
-    padding: 0 0 $vertical 0;
+    padding: 0 0 $vertical * 1.5 0;
     h1 {
       font: 700 50px/60px $oslo; 
     }
@@ -1492,6 +1540,12 @@ input, ul, li {
 
   h1, h2 {
     font: 700 40px/50px $oslo;
+  }
+
+  .intro {
+    h1, h2 {
+      font: 700 50px/60px $oslo;
+    }
   }
 
   h3, h4, h5  {
@@ -1558,9 +1612,17 @@ input, ul, li {
   // section {
   //   padding: $vertical / 2 0 0 0;
   // }
+
+  h1 {
+    font: 700px 50px/60px $oslo !important; 
+  }
+
   .contact {
     margin-bottom: 180px;
   }  
+
+
+
 }
 .super {
 

@@ -98,7 +98,7 @@ when article thumb is clicked
 		setTimeout(function(){
 	    	$('header').addClass('hidden');
 			$('#wrap > *').remove();
-			$('#wrap').load('index.html #wrap > *', function(){
+			$('#wrap').load('/ #wrap > *', function(){
 				odf.fadeInSeq();
 				initMap();
 				l($(hash));
@@ -170,7 +170,7 @@ odf.$w.load(function(){
 
 	l(window.location.pathname);
 
-	if(window.location.pathname === "/" || window.location.pathname === "/en/" || window.location.pathname === "/en" || window.location.pathname === "/odf/") {
+	if(window.location.pathname === "/" || window.location.pathname === "/odf/") {
 
 		setTimeout(function(){
 			$('#preloader').addClass('out');			
