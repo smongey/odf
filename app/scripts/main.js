@@ -288,13 +288,6 @@ odf.animMenuItems = function(what) {
 
 		$('.menu').addClass('open');
 
-		$(".lang li").each(function(i,el) {
-		    var $this = $(this);
-		    setTimeout(function() {
-		        $this.addClass('loadin');
-		    }, i*50); // milliseconds
-		});
-
 		$(".nav li").each(function(i,el) {
 		    var $this = $(this);
 		    setTimeout(function() {
